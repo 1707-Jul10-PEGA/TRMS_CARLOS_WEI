@@ -1,4 +1,10 @@
+ompiled class file
+*.class
 
+# Log file
+*.log
+
+# BlueJ files
 *.ctxt
 
 # Mobile Tools for Java (J2ME)
@@ -12,8 +18,6 @@
 *.tar.gz
 *.rar
 
-*.class
-.classpath
 .idea/
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
