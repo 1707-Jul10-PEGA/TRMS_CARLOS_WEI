@@ -8,7 +8,7 @@ import org.apache.log4j.*;
 import com.revature.trms.pojos.User;
 import com.revature.trms.util.ConnectionFactory;
 
-public class EmployeeDAO {
+public class UserDAO {
 	private static Logger logger = Logger.getRootLogger();
 	private Connection connection = null;
 	
@@ -16,7 +16,7 @@ public class EmployeeDAO {
 		connection = ConnectionFactory.getInstance().getConnection();
 	}
 	
-	public EmployeeDAO() throws SQLException{
+	public UserDAO() throws SQLException{
 		setup();
 	}
 	

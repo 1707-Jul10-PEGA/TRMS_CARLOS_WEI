@@ -22,7 +22,18 @@ public class ReimbursementDAO {
 		setup();
 	}
 	public void getForm() {
-		
+		logger.info("Fetching form from database.");
+		try {
+			connection.setAutoCommit(false);
+			
+			String sql = "SELECT * FROM REIMBURSEMENT";
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			
+			
+			preparedStatement.close();
+		} catch (Exception e) {
+			logger.error("Failed to save form to database.");
+		}
 	}
 	
 	public void setForm(Form form) {

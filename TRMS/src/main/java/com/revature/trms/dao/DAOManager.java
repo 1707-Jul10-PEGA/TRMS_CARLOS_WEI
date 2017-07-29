@@ -5,7 +5,7 @@ import java.sql.SQLException;
 import org.apache.log4j.Logger;
 
 public class DAOManager {
-	private static EmployeeDAO employeeDAO= null;
+	private static UserDAO employeeDAO= null;
 	private static ReimbursementDAO reimbursementDAO= null;
 	private static GradeDAO gradeDAO= null;
 	private static Logger logger = Logger.getRootLogger();
@@ -22,11 +22,11 @@ public class DAOManager {
 		return reimbursementDAO;
 	}
 	
-	public static EmployeeDAO getEmployeeDAO() {
+	public static UserDAO getEmployeeDAO() {
 		logger.info("Fetching EmployeeDAO");
 		if(employeeDAO == null) {
 			try {
-				employeeDAO = new EmployeeDAO();
+				employeeDAO = new UserDAO();
 			} catch (SQLException e) {
 				logger.error("Failed to fetch EmployeeDAO");
 			}
