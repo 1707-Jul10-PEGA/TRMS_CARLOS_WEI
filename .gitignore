@@ -1,5 +1,8 @@
-ompiled class file
+#compiled class file
 *.class
+
+#pom xml
+pom.xml
 
 # Log file
 *.log
