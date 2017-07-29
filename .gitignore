@@ -1,6 +1,9 @@
 #compiled class file
 *.class
 
+#classpath
+*.classpath
+
 #pom.xml
 pom.xml
 pom.properties
