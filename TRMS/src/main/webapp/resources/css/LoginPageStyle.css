@@ -1,0 +1,18 @@
+.card {
+    top: 50%;
+    right: 50%;
+    border-radius: 50px; 
+    margin: 50px;
+    padding: 50px;
+    background: #FAFFEA;
+    position: absolute;
+    transform: translate(60%, -60%);
+}
+
+h1 {
+    text-align: center;
+}
+
+#logo {
+    width: 35%;
+}

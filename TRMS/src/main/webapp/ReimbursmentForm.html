@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reimbursement Form Page</title>
+    <!--Meta Data-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--jQuery required by Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--Styled sheet-->
+    <link rel="stylesheet" type="text/css" href="resources/css/ReimbursementFormPageStyle.css" />
+</head>
+
+<body class="container">
+    <h1>Reimbursement Form</h1>
+    <div class="row">
+        <div id="divmsg"></div>
+        <div class="reimbursmentFormPage">
+            <br>
+            <br>
+            <form id="reimbursementForm">
+                <div class="form-group row">
+                    <label class="col-sm-2" for="date">Date</label>
+                    <div class="col-sm-4">
+                        <input id="date" type="text" class="form-control" required></input>
+                    </div>
+                    <label class="col-sm-2 col-form-label" for="time">Time</label>
+                    <div class="col-sm-4">
+                        <input id="time" type="time" class="form-control" required></input>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2" for="location">Location</label>
+                    <div class="col-sm-4">
+                        <input id="location" type="text" class="form-control" required></input>
+                    </div>
+                    <label class="col-sm-2" for="description">Description</label>
+                    <div class="col-sm-4">
+                        <input id="description" type="text" class="form-control" required></input>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2" for="cost">Cost</label>
+                    <div class="col-sm-4">
+                        <input id="cost" type="text" class="form-control" required></input>
+                    </div>
+                    <label class="col-sm-2" for="justification">Justification</label>
+                    <div class="col-sm-4">
+                        <input type="text" name="justification" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-2" for="gradingformat">Grading Format</label>
+                    <div class="col-sm-4">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Grading Formats
+                                <span class="caret"></span>
+                            </button>
+                            <ul id="gradingformat" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a id="lettergrade" href="#">Letter Grade</a></li>
+                                <li><a id="percentage" href="#">Percentage</a></li>
+                                <li><a id="passfail" href="#">Pass/Fail</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <label class="col-sm-2" for="eventtype">Event Type</label>
+                    <div class="col-sm-4">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Event Type
+                                <span class="caret"></span>
+                            </button>
+                            <ul id="eventtype" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a id="universitycourse" href="#">University course</a></li>
+                                <li><a id="seminar" href="#">Seminar</a></li>
+                                <li><a id="certificationpreparationclass" href="#">Certification Preparation Class</a></li>
+                                <li><a id="certification" href="#">Certification</a></li>
+                                <li><a id="technicaltraining" href="#">Technical Training</a></li>
+                                <li><a id="other" href="#">Other</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="pull-right">
+                    <button id="submitbtn" type="submit" class="btn btn-primary"> Submit </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

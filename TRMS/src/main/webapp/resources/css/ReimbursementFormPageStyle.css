@@ -1,0 +1,19 @@
+.registrationPage {
+    border-color: #ccc;
+    border-radius: 20px; 
+    padding: 5%;
+    margin: 10%;
+    background-image: linear-gradient(to bottom,#e8e8e8 0,#dfebf0 100%);
+    transform: translate(0%,-30%);
+}
+h1{
+    font-size: 50px;
+    text-align: center;
+}
+h5 {
+    text-align: center;
+}
+
+.button{
+    line-height: 50px;
+}
