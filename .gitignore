@@ -1,5 +1,9 @@
-ompiled class file
+#compiled class file
 *.class
+
+#pom.xml
+pom.xml
+pom.properties
 
 # Log file
 *.log
