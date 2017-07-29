@@ -6,7 +6,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.trms.dao.DAOManager;
+import com.revature.trms.dao.ReimbursementDAO;
 import com.revature.trms.pojos.Form;
 
 /**
@@ -14,6 +18,7 @@ import com.revature.trms.pojos.Form;
  */
 public class ReimbursementFormServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static Logger logger = Logger.getRootLogger();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -35,10 +40,9 @@ public class ReimbursementFormServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ObjectMapper objectMapper = new ObjectMapper();
-		System.out.println("Inside reimbursementFormServlet doPost.");
-		Form form = objectMapper.readValue(request.getParameter("Form"), Form.class);
-		System.out.println(form);
-		
+		logger.info("Processing doPost inside reimbursementFormServlet");
+		Form form = objectMapper.readValue(request.getParameter("form"), Form.class);
+		DAOManager.getReimbursementDAO().setForm(form);
 	}
 
 }

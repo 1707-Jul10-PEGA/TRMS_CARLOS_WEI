@@ -1,7 +1,6 @@
 package com.revature.trms.pojos;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 
 import org.apache.log4j.Logger;
 
@@ -10,7 +9,7 @@ import com.revature.trms.dao.DAOManager;
 public class Employee extends User {
 	private Logger logger = Logger.getRootLogger();
 
-	public void createForm(int formid, int userid, Date date, Timestamp timestamp, String location, String description,
+	public void createForm(int formid, int userid, Date date,  String timestamp, String location, String description,
 			double cost, int gradingFormat, int eventType, String justification) {
 		
 		if (this.getReimbursementTotal() <= 1000) {

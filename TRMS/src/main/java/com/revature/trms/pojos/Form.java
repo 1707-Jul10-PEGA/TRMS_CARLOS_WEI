@@ -1,13 +1,12 @@
 package com.revature.trms.pojos;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 
 public class Form {
 	private int formid;
 	private int userid;
 	private Date date;
-	private Timestamp timestamp;
+	private String timestamp;
 	private String location;
 	private String description;
 	private double cost;
@@ -19,7 +18,7 @@ public class Form {
 		super();
 	}
 
-	public Form(int formid, int userid, Date date, Timestamp timestamp, String location, String description,
+	public Form(int formid, int userid, Date date, String timestamp, String location, String description,
 			double cost, int gradingFormat, int eventType, String justification) {
 		super();
 		this.formid = formid;
@@ -52,10 +51,10 @@ public class Form {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public Timestamp getTimestamp() {
+	public String getTimestamp() {
 		return timestamp;
 	}
-	public void setTimestamp(Timestamp timestamp) {
+	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
 	}
 	public String getLocation() {

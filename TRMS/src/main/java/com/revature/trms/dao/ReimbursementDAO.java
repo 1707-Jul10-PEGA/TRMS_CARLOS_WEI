@@ -47,7 +47,7 @@ public class ReimbursementDAO {
 			preparedStatement.setInt(1, form.getFormid());
 			preparedStatement.setInt(2, form.getUserid());
 			preparedStatement.setDate(3, form.getDate());
-			preparedStatement.setTimestamp(4, form.getTimestamp());
+			preparedStatement.setString(4, form.getTimestamp());
 			preparedStatement.setString(5, form.getLocation());
 			preparedStatement.setString(6, form.getDescription());
 			preparedStatement.setDouble(7, form.getCost());
