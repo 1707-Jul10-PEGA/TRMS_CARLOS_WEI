@@ -3,12 +3,11 @@ window.onload = function() {
 }
 
 function handleEvent() {
-
     $.ajax({
         type: "POST",
-        url: "ReimbursementFormServlet",
+        url: "ReimbursementForm",
         data: "form=" + JSON.stringify(makeForm()),
-        success: function(){console.log("done")},
+        success: console.log("hello"),
         dataType: 'application/x-www-form-urlencoded'
     });
 }

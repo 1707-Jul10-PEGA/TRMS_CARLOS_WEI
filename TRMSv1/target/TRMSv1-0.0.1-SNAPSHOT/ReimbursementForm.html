@@ -48,7 +48,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2" for="cost">Cost</label>
                     <div class="col-sm-4">
-                        <input id="cost" type="text" class="form-control" required></input>
+                        <input id="cost" type="number" class="form-control" required></input>
                     </div>
                     <label class="col-sm-2" for="justification">Justification</label>
                     <div class="col-sm-4">
@@ -58,32 +58,22 @@
                 <div class="form-group row">
                     <label class="col-sm-2" for="gradingformat">Grading Format</label>
                     <div class="col-sm-4">
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Grading Formats
-                                <span class="caret"></span>
-                            </button>
-                            <ul id="gradingformat" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a id="lettergrade" href="#">Letter Grade</a></li>
-                                <li><a id="percentage" href="#">Percentage</a></li>
-                                <li><a id="passfail" href="#">Pass/Fail</a></li>
-                            </ul>
-                        </div>
+                        <select id="gradingformat" class="form-control">
+                            <option value="1">Letter Grade</option>
+                            <option value="2">Percentage</option>
+                            <option value="3">Pass/Fail</option>
+                        </select>
                     </div>
                     <label class="col-sm-2" for="eventtype">Event Type</label>
                     <div class="col-sm-4">
-                        <div class="dropdown">
-                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Event Type
-                                <span class="caret"></span>
-                            </button>
-                            <ul id="eventtype" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a id="universitycourse" href="#">University course</a></li>
-                                <li><a id="seminar" href="#">Seminar</a></li>
-                                <li><a id="certificationpreparationclass" href="#">Certification Preparation Class</a></li>
-                                <li><a id="certification" href="#">Certification</a></li>
-                                <li><a id="technicaltraining" href="#">Technical Training</a></li>
-                                <li><a id="other" href="#">Other</a></li>
-                            </ul>
-                        </div>
+                        <select id="eventtype" class="form-control">
+                            <option value="1">University course</option>
+                            <option value="2">Seminar</option>
+                            <option value="3">Certification Preparation Class</option>
+                            <option value="4">Certification</option>
+                            <option value="5">Technical Training</option>
+                            <option value="6">Other</option>
+                        </select>
                     </div>
                 </div>
                 <div class="pull-right">

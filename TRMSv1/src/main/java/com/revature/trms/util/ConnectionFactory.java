@@ -25,14 +25,15 @@ public class ConnectionFactory {
 		return cFactory;
 	}
 	public Connection getConnection() {
-		
+
 		Connection connection = null;
 
 		Properties properties = new Properties();
 		
-		String path = "/Users/carlosgastelum/Documents/Revature/TRMS_CARLOS_WEI/TRMS/data.properties";
+		String path = "/Users/carlosgastelum/Documents/Revature/TRMS_CARLOS_WEI/TRMSv1/data.properties";
 		try {
 			properties.load(new FileReader(path));
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 			connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("username"),
 					properties.getProperty("password"));
 		} catch (FileNotFoundException e) {
@@ -40,6 +41,8 @@ public class ConnectionFactory {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 		return connection;

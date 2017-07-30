@@ -41,6 +41,7 @@ public class ReimbursementFormServlet extends HttpServlet {
 		ObjectMapper objectMapper = new ObjectMapper();
 		logger.info("Processing doPost inside reimbursementFormServlet");
 		Form form = objectMapper.readValue(request.getParameter("form"), Form.class);
+		System.out.println(form);
 		DAOManager.getReimbursementDAO().setForm(form);
 	}
 

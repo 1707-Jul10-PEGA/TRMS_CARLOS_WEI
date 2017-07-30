@@ -6,24 +6,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.trms.dao.DAOManager;
-import com.revature.trms.pojos.Form;
-
 /**
- * Servlet implementation class ReimbursementForm
+ * Servlet implementation class Login
  */
-public class ReimbursementFormServlet extends HttpServlet {
+public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static Logger logger = Logger.getRootLogger();
-       
+
     /**
-     * @see HttpServlet#HttpServlet()
+     * Default constructor. 
      */
-    public ReimbursementFormServlet() {
-        super();
+    public Login() {
         // TODO Auto-generated constructor stub
     }
 
@@ -31,17 +23,16 @@ public class ReimbursementFormServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		ObjectMapper objectMapper = new ObjectMapper();
-		logger.info("Processing doPost inside reimbursementFormServlet");
-		Form form = objectMapper.readValue(request.getParameter("form"), Form.class);
-		DAOManager.getReimbursementDAO().setForm(form);
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
