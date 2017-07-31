@@ -16,18 +16,19 @@ function handleEvent() {
             dataType: "application/json",
             data: "login=" + JSON.stringify(login()),
             success: function(response) {
-                data = JSON.parse(response.responseText);
-                if(response.status == 200){
+                var data = JSON.parse(response.responseText);
+                if (response.status == 200) {
                     window.location.href = data.link;
-                }else{
+                } else {
                     displayAlert(data.msg);
                 }
-            },error: function(response){
+            },
+            error: function(response) {
                 data = JSON.parse(response.responseText);
                 console.log(typeof(data));
-                if(response.status == 200){
+                if (response.status == 200) {
                     window.location.href = data.link;
-                }else{
+                } else {
                     displayAlert(data.msg);
                 }
             }
