@@ -11,12 +11,10 @@ public class User {
 	private double reimbursementTotal;
 	
 	
-	public User() {
-		super();
-	}
+	public User() {}
+	
 	public User(int userid, String firstname, String lastname, String email, String department, int supervisor,
 			String position,double reimbursementTotal) {
-		super();
 		this.userid = userid;
 		this.firstname = firstname;
 		this.lastname = lastname;

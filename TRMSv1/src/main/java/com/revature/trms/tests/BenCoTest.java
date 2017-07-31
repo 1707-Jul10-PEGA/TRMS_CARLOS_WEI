@@ -14,23 +14,23 @@ import com.revature.trms.pojos.Employee;
 public class BenCoTest {
 
     private static Form form;
-    private static User benCo;
+    private static BenCo benCo;
     
     @BeforeClass
     public static void setup(){
-	benCo = DAOManager.getUserDAO().getUser(4);
+	benCo = new BenCo(DAOManager.getUserDAO().getUser(4));
 	form = DAOManager.getReimbursementDAO().getForm(1);
 	
     }
     
     @Test
     public void approveTest() {
-	assertTrue(1 == ((BenCo) benCo).approve(form));
+	assertTrue(1 == benCo.approve(form));
     }
     
     @Test
     public void denyTest() {
-	assertTrue(1 ==((BenCo) benCo).deny(form));
+	assertTrue(1 == benCo.deny(form));
     }
 
 }

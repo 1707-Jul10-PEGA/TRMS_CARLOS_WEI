@@ -147,11 +147,11 @@ INSERT INTO USER_TABLE VALUES(0, 'Nick', 'Jurczak', 'NickJ@revature.com', 'IT', 
 INSERT INTO LOGIN_INFORMATION VALUES(2, 'nick', '1234');
 INSERT INTO USER_TABLE VALUES(0, 'Robbie', 'Robbie', 'RobbieRob@revature.com', 'IT', 2, 'Employee', 0);
 INSERT INTO LOGIN_INFORMATION VALUES(3, 'robbie', 'robbie');
-INSERT INTO USER_TABLE VALUES(0, 'Carlos', 'Gastelum', 'CGastelum@gmail.com', 'BC', null ,'Department Head', 0);
+INSERT INTO USER_TABLE VALUES(0, 'Carlos', 'Gastelum', 'CGastelum@gmail.com', 'BenCo', null ,'Department Head', 0);
 INSERT INTO LOGIN_INFORMATION VALUES(4, 'carlos', '1111');
 
 COMMIT;
-
+/*
 INSERT INTO FORMS VALUES(1,1,'10-JAN-10', '10:30PM', 'REVATURE', 'TEST', 300, 1, 1, 'I WANT MONEY');
 DELETE FROM FORMS WHERE USERID = 1;
 DELETE FROM FORMS_APPROVAL WHERE FORMID = 28;

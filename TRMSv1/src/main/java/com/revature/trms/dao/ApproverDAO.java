@@ -36,19 +36,19 @@ public class ApproverDAO {
 		   user.getDepartment().equalsIgnoreCase(reimbursee.getDepartment())){
 		    sql = "UPDATE FORMS_APPROVAL SET DEPARTMENTHEAD = 'A'  WHERE FORMID = ?";
 		    preparedStatement = connection.prepareStatement(sql);
-		    preparedStatement.setInt(2, form.getFormid());
+		    preparedStatement.setInt(1, form.getFormid());
 		    num += preparedStatement.executeUpdate();
 		}
 		if(user.getUserid() == reimbursee.getSupervisor()){
 		    sql = "UPDATE FORMS_APPROVAL SET DIRECTSUPERVISOR = 'A'  WHERE FORMID = ?";
 		    preparedStatement = connection.prepareStatement(sql);
-		    preparedStatement.setInt(2, form.getFormid());
+		    preparedStatement.setInt(1, form.getFormid());
 		    num += preparedStatement.executeUpdate();
 		}
 		if("BenCo".equalsIgnoreCase(user.getDepartment())){
 		    sql = "UPDATE FORMS_APPROVAL SET BENCO = 'A'  WHERE FORMID = ?";
 		    preparedStatement = connection.prepareStatement(sql);
-		    preparedStatement.setInt(2, form.getFormid());
+		    preparedStatement.setInt(1, form.getFormid());
 		    num += preparedStatement.executeUpdate();
 		}
 		Savepoint s = connection.setSavepoint();
@@ -59,7 +59,8 @@ public class ApproverDAO {
 		preparedStatement.close();
 		
 		return num;
-	    } catch (Exception e) {
+	    } catch (SQLException e) {
+		e.printStackTrace();
 		logger.error("Failed to approve form with id:"+form.getFormid()+" to database.");
 		return -1;
 	    }
@@ -76,19 +77,19 @@ public class ApproverDAO {
 		   user.getDepartment().equalsIgnoreCase(reimbursee.getDepartment())){
 		    sql = "UPDATE FORMS_APPROVAL SET DEPARTMENTHEAD = 'D'  WHERE FORMID = ?";
 		    preparedStatement = connection.prepareStatement(sql);
-		    preparedStatement.setInt(2, form.getFormid());
+		    preparedStatement.setInt(1, form.getFormid());
 		    num += preparedStatement.executeUpdate();
 		}
 		if(user.getUserid() == reimbursee.getSupervisor()){
 		    sql = "UPDATE FORMS_APPROVAL SET DIRECTSUPERVISOR = 'D'  WHERE FORMID = ?";
 		    preparedStatement = connection.prepareStatement(sql);
-		    preparedStatement.setInt(2, form.getFormid());
+		    preparedStatement.setInt(1, form.getFormid());
 		    num += preparedStatement.executeUpdate();
 		}
 		if("BenCo".equalsIgnoreCase(user.getDepartment())){
 		    sql = "UPDATE FORMS_APPROVAL SET BENCO = 'D'  WHERE FORMID = ?";
 		    preparedStatement = connection.prepareStatement(sql);
-		    preparedStatement.setInt(2, form.getFormid());
+		    preparedStatement.setInt(1, form.getFormid());
 		    num += preparedStatement.executeUpdate();
 		}
 		Savepoint s = connection.setSavepoint();
@@ -99,7 +100,8 @@ public class ApproverDAO {
 		preparedStatement.close();
 		
 		return num;
-	    } catch (Exception e) {
+	    } catch (SQLException e) {
+		e.printStackTrace();
 		logger.error("Failed to approve form with id:"+form.getFormid()+" to database.");
 		return -1;
 	    }

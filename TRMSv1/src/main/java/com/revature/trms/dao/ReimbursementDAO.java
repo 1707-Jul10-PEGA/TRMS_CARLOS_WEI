@@ -32,10 +32,8 @@ public class ReimbursementDAO {
 		preparedStatement.setInt(1, formId);
 		
 		ResultSet rs = preparedStatement.executeQuery();
-		System.out.println("before rs");
 		if(rs.next()){
-		    form = new Form(rs.getInt(1), rs.getInt(2), rs.getDate(3), rs.getString(3), rs.getString(4), rs.getString(5), rs.getDouble(6), rs.getInt(7), rs.getInt(8), rs.getString(9));
-		    System.out.println(form);
+		    form = new Form(rs.getInt(1), rs.getInt(2), rs.getDate(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getDouble(7), rs.getInt(8), rs.getInt(9), rs.getString(10));
 		}
 		rs.close();
 		preparedStatement.close();
@@ -60,7 +58,7 @@ public class ReimbursementDAO {
 			Form form;
 			ArrayList<Form> formList = new ArrayList<Form>();
 			while(rs.next()){
-			    form = new Form(rs.getInt(1), rs.getInt(2), rs.getDate(3), rs.getString(3), rs.getString(4), rs.getString(5), rs.getDouble(6), rs.getInt(7), rs.getInt(8), rs.getString(9));
+			    form = new Form(rs.getInt(1), rs.getInt(2), rs.getDate(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getDouble(7), rs.getInt(8), rs.getInt(9), rs.getString(10));
 			    formList.add(form);
 			}
 			preparedStatement.close();
