@@ -1,0 +1,7 @@
+Create Triggers and auto sequencers 
+	formid for forms table
+	userid for user_table
+	gradeid for grade_table
+	presentationid for presentation table
+populate eventtype
+populate gradeformats

@@ -2,8 +2,10 @@ package com.revature.trms.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Savepoint;
+import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 
@@ -21,18 +23,53 @@ public class ReimbursementDAO {
 	public ReimbursementDAO() throws SQLException{
 		setup();
 	}
-	public void getForm() {
+	
+	public Form getForm(int formId){
+	    Form form = null;
+	    try {
+		String sql = "SELECT * FROM FORMS WHERE FORMID = ?";
+		PreparedStatement preparedStatement = connection.prepareStatement(sql);
+		preparedStatement.setInt(1, formId);
+		
+		ResultSet rs = preparedStatement.executeQuery();
+		if(rs.next()){
+		    form = new Form(rs.getInt(1), rs.getInt(2), rs.getDate(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getDouble(7), rs.getInt(8), rs.getInt(9), rs.getString(10));
+		}
+		rs.close();
+		preparedStatement.close();
+		
+		
+		return form;
+	    } catch (Exception e) {
+		logger.error("Failed to fetch form with id:"+formId+" to database.");
+		return null;
+	    }
+	}
+	
+	public ArrayList<Form> getFormList() {
 		logger.info("Fetching form from database.");
 		try {
 			connection.setAutoCommit(false);
 			
-			String sql = "SELECT * FROM REIMBURSEMENT";
+			String sql = "SELECT * FROM FORMS";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			
-			
+			ResultSet rs = preparedStatement.executeQuery();
+			Form form;
+			ArrayList<Form> formList = new ArrayList<Form>();
+			while(rs.next()){
+			    form = new Form(rs.getInt(1), rs.getInt(2), rs.getDate(3), rs.getString(4), rs.getString(5), rs.getString(6), rs.getDouble(7), rs.getInt(8), rs.getInt(9), rs.getString(10));
+			    formList.add(form);
+			}
 			preparedStatement.close();
+			return formList;
 		} catch (Exception e) {
+<<<<<<< HEAD
 			logger.error("Failed to fetch form to database.");
+=======
+			logger.error("Failed to fetch form list to database.");
+			return null;
+>>>>>>> origin/weis_branch
 		}
 	}
 	

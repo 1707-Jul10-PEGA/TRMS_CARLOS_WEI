@@ -8,6 +8,8 @@ import com.revature.trms.dao.DAOManager;
 
 public class Employee extends User {
 	private Logger logger = Logger.getRootLogger();
+	
+	public Employee(){};
 
 	public void createForm(int formid, int userid, Date date,  String timestamp, String location, String description,
 			double cost, int gradingFormat, int eventType, String justification) {
