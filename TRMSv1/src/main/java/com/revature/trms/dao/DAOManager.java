@@ -7,7 +7,8 @@ import org.apache.log4j.Logger;
 public class DAOManager {
 	private static UserDAO employeeDAO= null;
 	private static ReimbursementDAO reimbursementDAO= null;
-	private static GradeDAO gradeDAO= null;
+	private static GradeDAO gradeDAO = null;
+	private static LoginDAO loginDAO = null;
 	private static Logger logger = Logger.getRootLogger();
 	
 	public static ReimbursementDAO getReimbursementDAO() {
@@ -44,5 +45,18 @@ public class DAOManager {
 			}
 		}
 		return gradeDAO;
+	}
+
+	public static LoginDAO getLoginDAO() {
+		logger.info("Fetching GradeDAO");
+		if(loginDAO== null) {
+			try {
+				loginDAO = new LoginDAO();
+			} catch (SQLException e) {
+				logger.error("Failed to fetch GradeDAO");
+			}
+		}
+		return loginDAO;
+		
 	}
 }

@@ -13,7 +13,7 @@
     <description></description>
     <display-name>Login</display-name>
     <servlet-name>Login</servlet-name>
-    <servlet-class>com.revature.trms.servlets.Login</servlet-class>
+    <servlet-class>com.revature.trms.servlets.LoginServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Login</servlet-name>

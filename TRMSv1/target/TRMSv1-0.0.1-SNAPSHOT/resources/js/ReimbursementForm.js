@@ -19,8 +19,8 @@ function makeForm() {
     form.cost = document.getElementById("cost").value;
     form.timestamp = document.getElementById("time").value;
     form.description = document.getElementById("description").value;
-    form.gradingformat = document.getElementById("gradingformat").value;
+    form.gradingFormat = document.getElementById("gradingformat").value;
     form.justification = document.getElementById("justification").value;
-    form.eventtype = document.getElementById("eventtype").value;
+    form.eventType = document.getElementById("eventtype").value;
     return form;
 }

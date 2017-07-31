@@ -14,13 +14,15 @@ function handleEvent() {
 
 function makeForm() {
     var form = {};
+    console.log(location.search.substring(1));
+    form.userid = location.search.substring(1);
     form.date = document.getElementById("date").value;
     form.location = document.getElementById("location").value;
     form.cost = document.getElementById("cost").value;
     form.timestamp = document.getElementById("time").value;
     form.description = document.getElementById("description").value;
-    form.gradingformat = document.getElementById("gradingformat").value;
+    form.gradingFormat = document.getElementById("gradingformat").value;
     form.justification = document.getElementById("justification").value;
-    form.eventtype = document.getElementById("eventtype").value;
+    form.eventType = document.getElementById("eventtype").value;
     return form;
 }

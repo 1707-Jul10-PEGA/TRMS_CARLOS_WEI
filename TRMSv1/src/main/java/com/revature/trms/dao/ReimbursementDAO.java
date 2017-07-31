@@ -32,7 +32,7 @@ public class ReimbursementDAO {
 			
 			preparedStatement.close();
 		} catch (Exception e) {
-			logger.error("Failed to save form to database.");
+			logger.error("Failed to fetch form to database.");
 		}
 	}
 	
