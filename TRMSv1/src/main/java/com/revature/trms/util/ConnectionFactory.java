@@ -30,7 +30,7 @@ public class ConnectionFactory {
 
 		Properties properties = new Properties();
 		
-		String path = "/Users/carlosgastelum/Documents/Revature/TRMS_CARLOS_WEI/TRMSv1/data.properties";
+		String path = "data.properties";
 		try {
 			properties.load(new FileReader(path));
 			Class.forName("oracle.jdbc.driver.OracleDriver");

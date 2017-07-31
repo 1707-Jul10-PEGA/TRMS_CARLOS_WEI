@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <!--Meta Data-->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!--jQuery required by Bootstrap JS-->
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!--Styled sheet-->
+    <link rel="stylesheet" type="text/css" href="resources/css/LoginPageStyle.css" />
+</head>
+
+<body>
+    <div class="container">
+        <div id="inputBox" class="card">
+            <h1 class="card-title">Welcome</h1>
+            <br>
+            <div id="divmsg">
+            </div>
+            <form id="inputForm">
+                <div class="input-group input-group-lg">
+                    <span id="usericon" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input id="username" areatype="text" class="form-control" placeholder="Username" aria-describedby="usericon" required></input>
+                </div>
+                <br>
+                <div class="input-group input-group-lg">
+                    <span  id="pwdicon" class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input id="password" type="password" class="form-control" placeholder="Password" aria-describedby="pwdicon" required></input>
+                </div>
+                <br>
+                <div class="btn-toolbar pull-right">
+                    <button id="btnsubmit" type="button" class="btn btn-primary">Submit</button>
+                    <button id="btncreate" type="button" class="btn btn-info">Create Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

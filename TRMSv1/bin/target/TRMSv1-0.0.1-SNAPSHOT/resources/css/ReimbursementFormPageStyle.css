@@ -1,0 +1,22 @@
+body{
+    background-image: url(../img/ReimbursementsBackground.jpg);
+}
+.reimbursmentFormPage {
+    border-color: #ccc;
+    border-radius: 20px; 
+    padding: 5%;
+    margin: 10%;
+    background-image: linear-gradient(to bottom,#dee2ff 0,#f8feff 100%);
+    transform: translate(0%,-30%);
+}
+h1{
+    font-size: 50px;
+    text-align: center;
+}
+h5 {
+    text-align: center;
+}
+
+.button{
+    line-height: 50px;
+}
