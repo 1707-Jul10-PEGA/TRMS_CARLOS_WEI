@@ -47,17 +47,14 @@ public class LoginServlet extends HttpServlet {
 		Login correctLogin = DAOManager.getLoginDAO().getLogin(login.getUsername());
 		if(correctLogin == null) {
 			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-			response.setContentType("application/json");
 			response.getWriter().write("{\"msg\":\"Username not found\"}");
 		}
 		else if(login != null && login.getPassword().equals(correctLogin.getPassword())) {
 			response.setStatus(HttpServletResponse.SC_OK);
-			response.setContentType("application/json");
 			response.getWriter().write("{\"link\":\"ReimbursementForm.html?"+(String.valueOf(correctLogin.getUserid())) +"\"}");
 			return;
 		}else{
 			response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-			response.setContentType("application/json");
 			response.getWriter().write("{\"msg\":\"Incorrect password\"}");
 		}
 	}
