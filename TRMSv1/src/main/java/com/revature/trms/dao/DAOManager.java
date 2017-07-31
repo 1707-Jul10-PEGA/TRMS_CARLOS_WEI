@@ -5,17 +5,12 @@ import java.sql.SQLException;
 import org.apache.log4j.Logger;
 
 public class DAOManager {
-<<<<<<< HEAD
 	private static UserDAO employeeDAO= null;
 	private static ReimbursementDAO reimbursementDAO= null;
 	private static GradeDAO gradeDAO = null;
 	private static LoginDAO loginDAO = null;
-=======
 	private static UserDAO userDAO = null;
-	private static ReimbursementDAO reimbursementDAO = null;
-	private static GradeDAO gradeDAO = null;
 	private static ApproverDAO approverDAO = null;
->>>>>>> origin/weis_branch
 	private static Logger logger = Logger.getRootLogger();
 	
 	public static ReimbursementDAO getReimbursementDAO() {
@@ -53,8 +48,6 @@ public class DAOManager {
 		}
 		return gradeDAO;
 	}
-<<<<<<< HEAD
-
 	public static LoginDAO getLoginDAO() {
 		logger.info("Fetching GradeDAO");
 		if(loginDAO== null) {
@@ -66,8 +59,7 @@ public class DAOManager {
 		}
 		return loginDAO;
 		
-=======
-	
+	}
 	public static ApproverDAO getApproverDAO() {
 	    logger.info("Fetching ApproverDAO");
 		if(approverDAO == null) {
@@ -78,6 +70,5 @@ public class DAOManager {
 			}
 		}
 		return approverDAO;
->>>>>>> origin/weis_branch
 	}
 }
