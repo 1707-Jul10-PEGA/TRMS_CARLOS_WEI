@@ -16,12 +16,10 @@ public class BenCo extends User implements Approvers{
 	this.setReimbursementTotal(user.getReimbursementTotal());
     }
     
-    @Override
     public int approve(Form form) {
 	return DAOManager.getApproverDAO().approveForm(this, form);
     }
 
-    @Override
     public int deny(Form form) {
 	return DAOManager.getApproverDAO().denyForm(this, form);
     }

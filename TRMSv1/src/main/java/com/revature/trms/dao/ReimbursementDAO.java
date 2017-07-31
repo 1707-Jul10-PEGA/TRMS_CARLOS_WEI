@@ -64,6 +64,7 @@ public class ReimbursementDAO {
 			preparedStatement.close();
 			return formList;
 		} catch (Exception e) {
+			logger.error("Failed to fetch form to database.");
 			logger.error("Failed to fetch form list to database.");
 			return null;
 		}
