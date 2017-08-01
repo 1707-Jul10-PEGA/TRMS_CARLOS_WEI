@@ -13,24 +13,12 @@ function handleEvent() {
         $.ajax({
             type: "POST",
             url: "Login",
-            dataType: "application/json",
             data: "login=" + JSON.stringify(login()),
-            success: function(response) {
-                var data = JSON.parse(response.responseText);
-                if (response.status == 200) {
-                    window.location.href = data.link;
-                } else {
-                    displayAlert(data.msg);
-                }
+            success: function(response,status,xhr) {
+                window.location.href = xhr.getResponseHeader("Location");
             },
             error: function(response) {
-                data = JSON.parse(response.responseText);
-                console.log(typeof(data));
-                if (response.status == 200) {
-                    window.location.href = data.link;
-                } else {
-                    displayAlert(data.msg);
-                }
+                displayAlert(response.responseText);
             }
         });
     } else if (usr === "" && pwd !== "") {
