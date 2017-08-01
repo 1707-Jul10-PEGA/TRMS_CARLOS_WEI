@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 
@@ -47,15 +48,16 @@ public class LoginServlet extends HttpServlet {
 		Login correctLogin = DAOManager.getLoginDAO().getLogin(login.getUsername());
 		if(correctLogin == null) {
 			response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-			response.getWriter().write("{\"msg\":\"Username not found\"}");
+			response.getWriter().write("Username not found");
 		}
 		else if(login != null && login.getPassword().equals(correctLogin.getPassword())) {
-			response.setStatus(HttpServletResponse.SC_OK);
-			response.getWriter().write("{\"link\":\"ReimbursementForm.html?"+(String.valueOf(correctLogin.getUserid())) +"\"}");
-			return;
+			
+			request.getSession().setAttribute("userid", correctLogin.getUserid());
+			String url = request.getContextPath()+"/ReimbursementForm.html?"+String.valueOf(correctLogin.getUserid());
+			response.setHeader("Location", url);
 		}else{
 			response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-			response.getWriter().write("{\"msg\":\"Incorrect password\"}");
+			response.getWriter().write("Incorrect password");
 		}
 	}
 
