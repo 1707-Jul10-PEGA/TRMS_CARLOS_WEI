@@ -30,8 +30,6 @@ public class LoginDAO {
 		logger.info("Fetching login to database.");
 		Login correctLogin = null;
 		try {
-			connection.setAutoCommit(false);
-
 			String sql = "SELECT * FROM LOGIN_INFORMATION WHERE USERNAME=?";
 			String password = null;
 			int userid;

@@ -29,4 +29,14 @@
     <servlet-name>ReimbursementForm</servlet-name>
     <url-pattern>/ReimbursementForm</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Approvals</display-name>
+    <servlet-name>Approvals</servlet-name>
+    <servlet-class>com.revature.trms.servlets.ApprovalsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Approvals</servlet-name>
+    <url-pattern>/Approvals</url-pattern>
+  </servlet-mapping>
 </web-app>

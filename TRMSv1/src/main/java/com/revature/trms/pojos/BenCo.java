@@ -28,7 +28,7 @@ public class BenCo extends User implements Approvers{
 	BenCo benCo = new BenCo(DAOManager.getUserDAO().getUser(4));
 	Form form = DAOManager.getReimbursementDAO().getForm(2);
 	System.out.println(form);
-	System.out.println(benCo.deny(form));
+	System.out.println(benCo);
 	System.out.println(DAOManager.getReimbursementDAO().getFormList());
     }
 }
