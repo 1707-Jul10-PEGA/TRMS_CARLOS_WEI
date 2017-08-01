@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.trms.dao.DAOManager;
+import com.revature.trms.pojos.BenCo;
 import com.revature.trms.pojos.Form;
 
 /**
@@ -33,6 +34,18 @@ public class ApprovalsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	    throws ServletException, IOException {
 	
+	int formid = Integer.parseInt(request.getParameter("formid"));
+	int approverid= Integer.parseInt(request.getParameter("approverid"));
+	String approval= request.getParameter("approval");
+	BenCo benCo = new BenCo(DAOManager.getUserDAO().getUser(approverid));
+	Form form = DAOManager.getReimbursementDAO().getForm(formid);
+	if("approve".equalsIgnoreCase(approval)){
+	    System.out.println("approved");
+	    benCo.approve(form);
+	}else if("deny".equalsIgnoreCase(approval)){
+	    System.out.println("denied");
+	    benCo.deny(form);
+	}
     }
 
     /**
