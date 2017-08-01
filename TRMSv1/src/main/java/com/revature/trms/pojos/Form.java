@@ -101,4 +101,11 @@ public class Form {
 				+ gradingFormat + ", eventType=" + eventType + ", justification=" + justification + "]";
 	}
 	
+	/*@Override
+	public String toString() {
+		return "Form {\"formid\"=" + formid + ", \"userid\"=" + userid + ", \"date\"=" + date + ", \"timestamp\"=" + timestamp
+				+ ", \"location\"=" + location + ", \"description\"=" + description + ", cost=" + cost + ", gradingFormat="
+				+ gradingFormat + ", eventType=" + eventType + ", justification=" + justification + "}";
+	}*/
+	
 }
