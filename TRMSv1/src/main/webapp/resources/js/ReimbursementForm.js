@@ -7,8 +7,7 @@ function handleEvent() {
         type: "POST",
         url: "ReimbursementForm",
         data: "form=" + JSON.stringify(makeForm()),
-        success: console.log("hello"),
-        dataType: 'application/x-www-form-urlencoded'
+        success: console.log()
     });
 }
 
