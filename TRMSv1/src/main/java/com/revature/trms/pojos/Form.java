@@ -10,8 +10,8 @@ public class Form {
 	private String location;
 	private String description;
 	private double cost;
-	private int gradingFormat;
-	private int eventType;
+	private String gradingFormat;
+	private String eventType;
 	private String justification;
 	
 	public Form() {
@@ -28,8 +28,8 @@ public class Form {
 		this.location = location;
 		this.description = description;
 		this.cost = cost;
-		this.gradingFormat = gradingFormat;
-		this.eventType = eventType;
+		this.gradingFormat = getGradingFormatString(gradingFormat);
+		this.eventType = getEventTypeString(eventType);
 		this.justification = justification;
 	}
 	
@@ -75,17 +75,37 @@ public class Form {
 	public void setCost(double cost) {
 		this.cost = cost;
 	}
-	public int getGradingFormat() {
-		return gradingFormat;
+	public String getGradingFormat(){
+	    return gradingFormat;
+	}
+	public int GradingFormatNum() {
+	    	switch(gradingFormat){
+	    	case "Letter Grade": return 1;
+	    	case "Percentage": return 2;
+	    	case "Pass/Fail": return 3;
+	    	}
+		return (Integer) null;
 	}
 	public void setGradingFormat(int gradingFormat) {
-		this.gradingFormat = gradingFormat;
+		this.gradingFormat = getGradingFormatString(gradingFormat);
 	}
-	public int getEventType() {
-		return eventType;
+	public String getEventType(){
+	    return eventType;
+	}
+	public int EventTypeNum() {
+    	    	switch(eventType){
+    	    	case "University Course": return 1;
+    	    	case "Seminar": return 2;
+    	    	case "Certification Preparation Class": return 3;
+    	    	case "Certification": return 4;
+    	    	case "Technical Training": return 5;
+    	    	case "Other": return 6;
+	    	}
+    	    	//Should never reach. If it does, then something messed up in the db or when converting to a string
+		return (Integer) null;
 	}
 	public void setEventType(int eventType) {
-		this.eventType = eventType;
+		this.eventType = getEventTypeString(eventType);
 	}
 	public String getJustification() {
 		return justification;
@@ -101,6 +121,26 @@ public class Form {
 				+ gradingFormat + ", eventType=" + eventType + ", justification=" + justification + "]";
 	}
 	
+	private String getEventTypeString(int eventType){
+	    switch(eventType){
+	    case 1: return "University Course";
+	    case 2: return "Seminar";
+	    case 3: return "Certification Preparation Class";
+	    case 4: return "Certification";
+	    case 5: return "Technical Training";
+	    case 6: return "Other";
+	    }
+	    return null;
+	}
+	
+	private String getGradingFormatString(int gradingFormat){
+	    switch(gradingFormat){
+	    case 1: return "Letter Grade";
+	    case 2: return "Percentage";
+	    case 3: return "Pass/Fail";
+	    }
+	    return null;
+	}
 	/*@Override
 	public String toString() {
 		return "Form {\"formid\"=" + formid + ", \"userid\"=" + userid + ", \"date\"=" + date + ", \"timestamp\"=" + timestamp

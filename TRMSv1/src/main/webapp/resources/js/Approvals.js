@@ -6,6 +6,7 @@ $(document).ready(function(){
 
 function processForms(forms){
 	var formsTable = document.getElementById("formstable");
+	console.log(forms);
 	for(var form in forms){
 		var tr = document.createElement("tr");
 		var x = forms[form];

@@ -87,8 +87,8 @@ public class ReimbursementDAO {
 			preparedStatement.setString(5, form.getLocation());
 			preparedStatement.setString(6, form.getDescription());
 			preparedStatement.setDouble(7, form.getCost());
-			preparedStatement.setInt(8, form.getGradingFormat());
-			preparedStatement.setInt(9, form.getEventType());
+			preparedStatement.setInt(8, form.GradingFormatNum());
+			preparedStatement.setInt(9, form.EventTypeNum());
 			preparedStatement.setString(10, form.getJustification());
 			
 			Savepoint savepoint = connection.setSavepoint();
